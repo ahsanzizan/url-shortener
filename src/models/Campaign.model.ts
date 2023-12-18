@@ -6,5 +6,5 @@ export const CampaignSchema = new Schema({
   long: { type: String, required: true },
 });
 
-export default models.Admin<Campaign> ||
-  model<Campaign>("Admin", CampaignSchema);
+export default models.Campaign<Campaign> ||
+  model<Campaign>("Campaign", CampaignSchema);
