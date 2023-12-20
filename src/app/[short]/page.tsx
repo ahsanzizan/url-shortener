@@ -7,9 +7,9 @@ export default async function Campaign({
   params: { short: string };
 }) {
   const campaign = await getCampaignByShort(params.short);
-  if (!campaign) {
-    notFound();
+  if (campaign) {
+    return redirect(campaign.long);
   }
 
-  return redirect(campaign.long);
+  notFound();
 }
