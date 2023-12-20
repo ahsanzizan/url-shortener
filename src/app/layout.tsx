@@ -1,12 +1,26 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import { Raleway } from "next/font/google";
+import { NextAuthProvider } from "./components/NextAuthProvider";
+import TopLoader from "./components/TopLoader";
+import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+});
 
 export const metadata: Metadata = {
-  title: "ahsanzizan's URL shortener",
-  description: "URL shortener",
+  title: {
+    default: "Ahsan Azizan | Personal Website",
+    template: "Ahsan Azizan | %s",
+  },
+  description: "Personal website of Ahsan Awadullah Azizan",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -16,7 +30,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={raleway.className + " overflow-x-hidden bg-black text-white"}
+      >
+        <NextAuthProvider>
+          <TopLoader />
+          <Toaster position="top-right" />
+          {children}
+        </NextAuthProvider>
+      </body>
     </html>
   );
 }
