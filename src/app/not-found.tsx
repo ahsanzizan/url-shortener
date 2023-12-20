@@ -18,7 +18,7 @@ export default function NotFound() {
           <div className="block">
             <StandardLinkButton href="https://www.ahsanzizan.xyz">
               To My Website
-              <LeftArrowIcon className="ml-1 group-hover:translate-x-1 fill-current transition-transform duration-500" />
+              <LeftArrowIcon className="rotate-180 mr-1 group-hover:-translate-x-1 fill-current transition-transform duration-500" />
             </StandardLinkButton>
           </div>
         </header>
