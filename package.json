@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.6",
-    "@testing-library/react": "^14.1.2",
+    "@testing-library/react": "^14.2.2",
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
